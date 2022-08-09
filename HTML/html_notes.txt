@@ -1,0 +1,8 @@
+Block Level
+- they do have width equal to the parent
+- ex : div, h1...h6, p, table, form, ul, ol...
+Inline Level
+- they do not have any height and width
+- a, b, strong, i, u, span, del, sub, sup...
+Inline-Block
+- they hace height and width but appear inline
