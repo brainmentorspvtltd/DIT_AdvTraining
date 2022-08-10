@@ -1,0 +1,4 @@
+h2 {
+    /* !important - makes the highest priority */
+    color: green !important;
+}
