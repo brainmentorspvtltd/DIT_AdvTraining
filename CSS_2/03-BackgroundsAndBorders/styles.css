@@ -1,0 +1,28 @@
+body {
+    background: #000 url("https://carsalesbase.com/wp-content/uploads/2020/07/US-sports-car-sales-Chevrolet_Corvette.jpg") no-repeat center / cover fixed;
+    margin: 0px;
+}
+
+/* Parallax Effect */
+div {
+    height: 750px;
+    background-size: cover;
+    margin-bottom: 400px;
+    background-attachment: fixed;
+}
+
+#div_1 {
+    background-image: url("https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/1-corvette-stingray-c8-2019-fd-hr-hero-front_0.jpg?itok=SEYe_vLy");
+}
+#div_2 {
+    background-image: url("https://s.abcnews.com/images/Business/porsche-taycan-turbo-s-01-ht-iwb-210615_1623782736213_hpMain_16x9_1600.jpg");
+}
+#div_3 {
+    background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2019-mclaren-720s-spider-mmp-1-1638979917.jpg?crop=0.777xw:0.635xh;0.102xw,0.223xh&resize=480:*");
+}
+#div_4 {
+    background-image: url("https://imageio.forbes.com/specials-images/imageserve/6064c6802c761b99a89d1f21/0x0.jpg?format=jpg&crop=2375,1336,x0,y120,safe&width=1200");
+}
+#div_5 {
+    background-image: url("https://www.grandprix247.com/wp-content/uploads/2021/01/car-5852408_1920.jpg");
+}
