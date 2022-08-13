@@ -1,0 +1,33 @@
+/* Pseudo Element : after and before*/
+.row:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.row {
+    margin-bottom: 50px;
+    border: 2px solid red;
+}
+
+.col-1 {
+    background-color: lightblue;
+    float: left;
+    width: 40%;
+}
+
+.col-2 {
+    float: right;
+    background-color: lightcoral;
+    width: 40%;
+}
+
+.blank {
+    clear: both;
+}
+
+.div-1 {
+    border: 5px solid red;
+}
+
+/* Clearfix */

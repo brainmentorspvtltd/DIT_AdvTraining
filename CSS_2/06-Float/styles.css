@@ -1,0 +1,35 @@
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+.col-1 {
+    width: 12%;
+}
+.col-2 {
+    width: 25%;
+}
+.col-3 {
+    width: 33%;
+}
+.col-4 {
+    width: 50%;
+}
+
+.bg-dark {
+    background-color: darkblue;
+}
+.bg-light {
+    background-color: lightcoral;
+}
+.col {
+    height: 300px;
+}
