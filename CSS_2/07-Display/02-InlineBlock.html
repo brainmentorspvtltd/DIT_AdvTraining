@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col {
+            background-color: lightblue;
+            display: inline-block;
+            width: 30%;
+            padding: 10px;
+        }
+        #main-navigation ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        #main-navigation ul li {
+            display: inline-block;
+            /* margin: 0px -2px; */
+            margin: 0px 10px;
+            text-align: center;
+            width: 15%;
+            
+        }
+        #main-navigation ul li a {
+            text-decoration: none;
+            background-color: red;
+            display: block;
+            padding: 10px 0px;
+            color: #fff;
+        }
+        #main-navigation ul li:hover a {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Display Inline Block</h1>
+
+    <div id="main-navigation">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Sports</a>
+            </li>
+            <li>
+                <a href="#">Electronics</a>
+            </li>
+            <li>
+                <a href="#">Furniture</a>
+            </li>
+            <li>
+                <a href="#">Books</a>
+            </li>
+            <li>
+                <a href="#">More</a>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <h2>This is column-1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nulla, atque sequi, cumque aperiam, sit minima exercitationem officiis dicta fugit rerum odio. Veniam tenetur dicta voluptatum culpa saepe voluptatibus natus?
+            </p>
+        </div>
+        <div class="col">
+            <h2>This is column-2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nulla, atque sequi, cumque aperiam, sit minima exercitationem officiis dicta fugit rerum odio. Veniam tenetur dicta voluptatum culpa saepe voluptatibus natus?
+            </p>
+        </div>
+        <div class="col">
+            <h2>This is column-3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nulla, atque sequi, cumque aperiam, sit minima exercitationem officiis dicta fugit rerum odio. Veniam tenetur dicta voluptatum culpa saepe voluptatibus natus?
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
