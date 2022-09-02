@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 data-test-id="12121">Global Attributes</h1>
+
+    <ul>
+        <li data-movie-id="101">Avengers : Age of Ultron</li>
+        <li data-movie-id="102">Avengers : Infinity War</li>
+        <li data-movie-id="103">Avengers : Endgame</li>
+    </ul>
+
+    <!-- <img src=".." data-x="" data-y="" alt=""> -->
+
+    <div itemscope itemtype="http://www.movies.com/thor" itemid="movie-101">
+        <h2 itemprop="name">Thor : Love and Thunder</h2>
+        <p>
+            Director : <span itemprop="director">Name of director</span>
+        </p>
+        <p itemprop="genre">Genre : Action, Comedy</p>
+        <a href="#" itemprop="movieCast">Read about cast</a>
+    </div>
+    
+</body>
+</html>

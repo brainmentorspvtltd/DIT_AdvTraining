@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Picture Tag</h1>
+
+    <!-- <img src="taj_1.jpg" alt=""> -->
+    <picture>
+        <source media="(min-width:992px)" srcset="taj_1.jpg">
+        <source media="(min-width:768px)" srcset="taj_2.png">
+        <img src="taj_3.PNG" alt="">
+    </picture>
+    
+</body>
+</html>
