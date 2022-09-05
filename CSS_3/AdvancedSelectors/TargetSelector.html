@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #login {
+            border: 1px solid red;
+            display: none;
+        }
+        #login:target {
+            display: block;
+        }
+        a {
+            background-color: red;
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            width: 15%;
+            text-align: center;
+            padding: 10px 0px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Target Selector</h1>
+
+    <a href="#login">Login</a>
+
+    <div id="login">
+        <h3>Login Form</h3>
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Enter Email</td>
+                    <td>
+                        <input type="email" placeholder="Enter Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Password</td>
+                    <td>
+                        <input type="password" placeholder="Enter Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Login">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <a href="#">Close</a>
+    </div>
+    
+</body>
+</html>

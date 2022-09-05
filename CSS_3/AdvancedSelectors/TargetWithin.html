@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article:target-within {
+            background-color: lightgray;
+        }
+        section {
+            display: none;
+        }
+        section:target {
+            background-color: lightcoral;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Target Within</h1>
+
+    <ul>
+        <li>
+            <a href="#section_1">Home</a>
+        </li>
+        <li>
+            <a href="#section_2">Gallery</a>
+        </li>
+        <li>
+            <a href="#section_3">About Us</a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <article>
+        <section id="section_1">
+            <h2>This is section_1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed at tempora magnam quam amet fuga aliquid asperiores quaerat cumque non animi nemo inventore aliquam eius optio ducimus doloremque, nisi id.
+            </p>
+        </section>
+    
+        <!-- <hr> -->
+    
+        <section id="section_2">
+            <h2>This is section_2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed at tempora magnam quam amet fuga aliquid asperiores quaerat cumque non animi nemo inventore aliquam eius optio ducimus doloremque, nisi id.
+            </p>
+        </section>
+    
+        <!-- <hr> -->
+    
+        <section id="section_3">
+            <h2>This is section_3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed at tempora magnam quam amet fuga aliquid asperiores quaerat cumque non animi nemo inventore aliquam eius optio ducimus doloremque, nisi id.
+            </p>
+        </section>
+    </article>
+    
+</body>
+</html>
