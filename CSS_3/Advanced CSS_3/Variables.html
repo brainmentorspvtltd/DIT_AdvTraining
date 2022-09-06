@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* Global variables */
+            --heading-color : red;
+            --primary-font-family : arial;
+            --secondary-font-family: 'Times New Roman', Times, serif;
+            --para-color : gray;
+            --primary-color : #5252af;
+            --span-font-weight : bold;
+        }
+        div {
+            /* Local variable */
+            --border-color: blue;
+        }
+        h1 {
+            color: var(--primary-color);
+            font-family: var(--primary-font-family, var(--secondary-font-family));
+        }
+        h2 {
+            color: var(--heading-color);
+            border: 2px solid var(--border-color);
+        }
+        p {
+            color: var(--para-color);
+        }
+        span {
+            font-weight: var(--span-font-weight);
+        }
+        a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Variables</h1>
+
+    <div>
+        <h2>This is a heading</h2>
+        <a href="#">This is some link</a>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <span>Similique accusamus omnis assumenda libero iste veritatis.</span> Maiores, consequuntur est autem velit facere, officia eum corrupti amet harum distinctio obcaecati. Quasi, nulla.
+        </p>
+        <a href="#">This is some link</a>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <span>At fugit fuga corporis voluptatibus velit. Ut tempora molestias</span> sed, provident, tenetur nesciunt fugit exercitationem, explicabo nihil consequatur sint harum ullam nobis.
+        </p>
+    </div>
+
+    <h2>This is another heading</h2>
+    <a href="#">This is some link</a>
+    
+</body>
+</html>

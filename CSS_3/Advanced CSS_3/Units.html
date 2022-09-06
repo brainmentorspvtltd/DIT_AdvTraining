@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 14px;
+        }
+        div {
+            font-size: 16px;
+            /* height: 50vh; */
+            border: 5px solid red;
+            /* width: 50%; - 50% of body */
+            /* width: 50vw; */
+            height: 80vmin;
+            width: 50vmax;
+        }
+        .heading_1 {
+            /* 1em = 16px */
+            font-size: 3em;
+        }
+        .heading_2 {
+            /* 1rem = root font size */
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Units</h1>
+
+    <!-- Absolute Units
+    - px - pixel
+    - cm - centimeter - 1cm = 37.8px
+    - mm - millimeter - 1/10th of 1cm
+    - in - inches - 1in = 96px
+    - pc - pica - 1/6th on 1in
+    - pt - points - 1/72 of 1in
+
+    Relative Units
+    - %
+    - em - 1em = base size = 16px(by default)
+    - rem - relative to font-size of root element
+    - ex - relative to x-height of the font
+    - vh - viewport height
+    - vw - viewport width
+    - vmin - viewport min - relative to smaller dimension
+    - vmax - viewport max - relative to larger dimension -->
+
+    <div>
+        <h2 class="heading_1">This heading is relative to it's parent</h2>
+        <h2 class="heading_2">This heading is relative to root element</h2>
+    </div>
+
+</body>
+</html>

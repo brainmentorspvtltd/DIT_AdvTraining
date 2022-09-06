@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            counter-reset: section;
+            counter-reset: list;
+        }
+        h2::after {
+            counter-increment: section;
+            content: " Section_" counter(section);
+        }
+        li:after {
+            counter-increment: list;
+            content: "This is item : " counter(list);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>counter()</h1>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <section id="section_1">
+        <h2>This is</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam blanditiis aliquam porro id molestiae quidem sint necessitatibus qui quibusdam facilis provident cum earum nulla, minus quia reiciendis quod. Quidem, repellat?
+        </p>
+    </section>
+
+    <section id="section_2">
+        <h2>This is</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam blanditiis aliquam porro id molestiae quidem sint necessitatibus qui quibusdam facilis provident cum earum nulla, minus quia reiciendis quod. Quidem, repellat?
+        </p>
+    </section>
+
+    <section id="section_3">
+        <h2>This is</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam blanditiis aliquam porro id molestiae quidem sint necessitatibus qui quibusdam facilis provident cum earum nulla, minus quia reiciendis quod. Quidem, repellat?
+        </p>
+    </section>
+    
+</body>
+</html>
