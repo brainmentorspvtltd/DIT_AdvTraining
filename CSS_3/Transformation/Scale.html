@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        img {
+            transition-duration: 2s;
+        }
+        div:hover img {
+            /* transform: scaleX(1.5); */
+            /* transform: scaleY(2); */
+            /* transform: scale(1.5,1.5) translateY(80px); */
+            transform: scale(1.5, 1.5) rotateY(360deg) translateY(80px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Transform Scale</h1>
+
+    <div>
+        <img src="https://www.91-img.com/pictures/147646-v2-samsung-galaxy-a53-5g-mobile-phone-large-1.jpg?tr=q-80" alt="">
+    </div>
+    
+</body>
+</html>
