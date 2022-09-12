@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #banner {
+            height: calc(100vh - 100px);
+            border: 2px solid red;
+            background-image: url("../../images/WebImages/batman_arkham_knight-1366x768.jpg");
+            background-size: 100% 100%;
+            animation: slideshow 20s infinite linear;
+        }
+        @keyframes slideshow {
+            0%, 15% {
+                background-image: url("../../images/WebImages/batman_arkham_knight-1366x768.jpg");
+            }
+            20%, 35% {
+                background-image: url("../../images/WebImages/the-joker-black-white.jpeg");
+            }
+            40%, 55% {
+                background-image: url("../../images/WebImages/awesome-wallpapers-6482-6759-hd-wallpapers.jpg");
+            }
+            60%, 75% {
+                background-image: url("../../images/WebImages/chris_hemsworth__angry_thor.jpg");
+            }
+            80%, 95% {
+                background-image: url("../../images/WebImages/Iron-Man-3-2013-Wallpaper.jpg");
+            }
+            100% {
+                background-image: url("../../images/WebImages/batman_arkham_knight-1366x768.jpg");
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Slideshow</h1>
+
+    <div id="banner"></div>
+    
+</body>
+</html>
