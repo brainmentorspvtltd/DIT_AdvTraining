@@ -100,6 +100,10 @@ ul {
 #header {
     background-color: #fff;
     margin-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 10;
 }
 #header .col-1 {
     width: 30%;
@@ -190,6 +194,11 @@ ul {
     display: flex;
 }
 
+
+#content {
+    margin-top: 80px;
+}
+
 #sidebar_1 {
     width: 20%;
 }
@@ -278,6 +287,10 @@ ul {
     background-color: #EBEBEB;
 }
 
+#sidebar_1 .widget-2 {
+    position: sticky;
+    top: 80px;
+}
 
 #main {
     width: 50%;
@@ -328,8 +341,110 @@ ul {
     background-color: #EBEBEB;
 }
 
+#sort {
+    padding: 10px 0px;
+}
+#sort button{
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+}
+#sort button .border {
+    width: 82%;
+}
+
+.post {
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.post .post-header {
+    padding: 15px;
+}
+.post .post-by {
+    width: 90%;
+}
+.post .post-by .user-img {
+    width: 10%;
+    margin-right: 10px;
+}
+.post .user-info {
+    font-size: 13px;
+}
+.post .user-info > div {
+    margin-bottom: 2px;
+}
+
+.post .post-desc {
+    text-align: justify;
+    font-size: 14px;
+    padding: 0px 15px;
+    margin-bottom: 15px;
+}
+
+.post .post-details {
+    padding: 10px;
+}
+.post .post-actions {
+    padding: 4px 10px;
+}
+.post .post-actions ul li {
+    width: 100%;
+    text-align: center;
+}
+.post .post-actions ul li a {
+    display: block;
+    padding: 15px 0px;
+}
+.post .post-actions ul li a:hover {
+    background-color: #EBEBEB;
+}
+
+
 #sidebar_2 {
     width: 25%;
+}
+
+#sidebar_2 .news {
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+#sidebar_2 .news .row {
+    padding: 10px;
+}
+#sidebar_2 .news ul li strong {
+    font-weight: 600;
+}
+#sidebar_2 .news ul li a {
+    color: #000;
+    font-size: 14px;
+    padding: 10px 10px 10px 20px;
+    display: block;
+    position: relative;
+}
+#sidebar_2 .news ul li a p {
+    color: rgba(0,0,0,0.40);
+    margin-top: 5px;
+}
+#sidebar_2 .news ul li a:hover {
+    background-color: #EBEBEB;
+}
+
+#sidebar_2 .news ul li a::before {
+    content: "";
+    border: 2px solid #000;
+    border-radius: 50%;
+    height: 3px;
+    width: 3px;
+    left: 6px;
+    top: 15px;
+    position: absolute;
+}
+
+#sidebar_2 .ad {
+    position: sticky;
+    top: 80px;
 }
 
 /* Footer */
