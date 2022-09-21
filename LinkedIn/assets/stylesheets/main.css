@@ -100,11 +100,17 @@ ul {
 #header {
     background-color: #fff;
     margin-bottom: 20px;
+    padding: 0px 15px;
     position: fixed;
     width: 100%;
     top: 0px;
     z-index: 10;
 }
+
+#header .container {
+    max-width: 1140px;
+}
+
 #header .col-1 {
     width: 30%;
 }
@@ -143,6 +149,57 @@ ul {
 #header .work ul li a span {
     display: block;
 }
+#header .work ul {
+    display: flex;
+}
+
+@media(max-width:1200px) {
+    #header .col-2 {
+        width: 60%;
+    }
+}
+
+@media(max-width:1024px) {
+    #header .container{
+        max-width: 100%;
+        width: 100%;
+    }
+    #header .search {
+        display: none;
+    }
+    #header .row {
+        justify-content: flex-start;
+    }
+    #header .col-1 {
+        width: 4%;
+        margin-left: 20px;
+    }
+    #header .col-2 {
+        width: 80%;
+    }
+    #header .logo {
+        width: 80%;
+    }
+}
+
+@media(max-width: 992px) {
+    #header .col-1 {
+        width: 6%;
+    }
+    #header .col-2 {
+        width: 90%;
+    }
+}
+
+@media(max-width:576px) {
+    #header .work {
+        display: none;
+    }
+    #header .col-1 {
+        width: 50px;
+        padding: 10px 0px;
+    }
+}
 
 /* Main-Navigation */
 #main-nav {
@@ -152,6 +209,7 @@ ul {
 #main-nav ul {
     display: flex;
     align-items: baseline;
+    transition-duration: 1s;
 }
 #main-nav ul li {
     width: 18%;
@@ -190,13 +248,99 @@ ul {
     color: #000;
 }
 
-#header .work ul {
-    display: flex;
+#main-nav ul li.search-tab {
+    display: none;
+}
+
+#main-nav .menu-btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    display: none;
+}
+#main-nav .menu-btn .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin-bottom: 4px;
+}
+#main-nav input[value="toggle-menu"] {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 31px;
+    height: 17px;
+    z-index: 1;
+    opacity: 0;
+}
+
+@media(max-width:1024px) {
+    #main-nav ul li.search-tab {
+        display: block;
+    }    
+}
+@media(max-width:992px) {
+    #main-nav {
+        width: 90%;
+    }
+}
+
+@media(max-width:768px) {
+    #main-nav ul li a {
+        padding: 12px 0px;
+    }
+    #main-nav ul li a i {
+        font-size: 22px;
+    }
+    #main-nav ul li span {
+        display: none;
+    }
+}
+
+@media(max-width:576px) {
+    #main-nav {
+        border: none;
+    }
+    #main-nav ul {
+        /* display: none; */
+        position: absolute;
+        display: block;
+        background-color: #fff;
+        text-align: center;
+        width: 100%;
+        left: 0px;
+        top: 70px;
+        border: 2px solid #EBEBEB;
+        box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.08);
+        transform: translateX(-100%);
+    }
+    #main-nav ul li {
+        margin: 0 auto;
+    }
+    #main-nav ul li span {
+        display: block;
+    }
+    #main-nav .menu-btn {
+        display: block;
+    }
+    #main-nav input[value="toggle-menu"]:checked ~ ul {
+        transform: translateX(0%);
+    }
 }
 
 
 #content {
     margin-top: 80px;
+}
+
+@media(max-width:768px) {
+    #content > .container > .row {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 
 #sidebar_1 {
@@ -292,8 +436,42 @@ ul {
     top: 80px;
 }
 
+@media(max-width: 992px) {
+    #sidebar_1 {
+        width: 28%;
+    }
+}
+
+@media(max-width: 768px) {
+    #sidebar_1 {
+        width: 75%;
+    }
+    #sidebar_1 .widget > div:not(:first-child) {
+        display: none;
+    }
+    #sidebar_1 .widget-2{
+        display: none;
+    }
+    #sidebar_1 .profile .img {
+        width: 200px;
+        margin: 0 auto 20px;
+    }
+}
+
 #main {
     width: 50%;
+}
+
+@media(max-width: 992px) {
+    #main {
+        width: 68%;
+    }
+}
+
+@media(max-width: 768px) {
+    #main {
+        width: 75%;
+    }
 }
 
 
@@ -339,6 +517,22 @@ ul {
 }
 #upload-post ul li a:hover {
     background-color: #EBEBEB;
+}
+
+@media(max-width: 576px) {
+    #main, #sidebar_1 {
+        width: 90%;
+    }
+    #upload-post .img-1 {
+        flex-basis: 14%;
+    }
+    #upload-post .upload-btn {
+        flex-basis: 80%;
+    }
+    #upload-post ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 #sort {
@@ -445,6 +639,12 @@ ul {
 #sidebar_2 .ad {
     position: sticky;
     top: 80px;
+}
+
+@media (max-width: 992px) {
+    #sidebar_2 {
+        display: none;
+    }
 }
 
 /* Footer */
