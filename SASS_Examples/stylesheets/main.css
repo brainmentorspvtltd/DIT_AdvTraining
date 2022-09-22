@@ -1,0 +1,17 @@
+.alert {
+  height: 400px;
+  width: 400px;
+  border: 2px solid rgba(12, 180, 251, 0.4823529412);
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.alert p {
+  color: rgba(0, 0, 0, 0.4274509804);
+  font-family: arial;
+}
+.alert p span {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=main.css.map */

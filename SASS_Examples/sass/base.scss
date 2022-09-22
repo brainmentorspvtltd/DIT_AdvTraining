@@ -1,0 +1,32 @@
+// Pre-defined variables
+@use "sass:math" as math;
+
+// User defined variables
+$primary-color: #09b4ff;
+$border-color: #0cb4fb7b;
+$para-color: #0000006d;
+$padding: 15px;
+$font: arial;
+
+.alert {
+    // height: math.$pi + px;
+    height: 400px;
+    width: 400px;
+    border: 2px solid $border-color;
+    // border-radius: 50%;
+    margin: 0 auto;
+    padding: $padding;
+}
+
+.alert {
+    p {
+        color: $para-color;
+        font-family: $font;
+        span {
+            font-weight: bold;
+        }
+    }
+    // span {
+    //     font-weight: bold;
+    // }
+}
