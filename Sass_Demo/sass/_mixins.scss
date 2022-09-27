@@ -1,0 +1,40 @@
+@mixin list-params {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+@mixin text-alignment($property, $value) {
+    #{$property} : $value;
+    text-shadow: 1px 1px 10px red;
+}
+
+@mixin img-align($img, $x:50%, $y:50%) {
+    background: {
+        image: $img;
+        repeat: no-repeat;
+        position: $x $y;
+    }
+}
+
+@mixin flex-align($justify-content:center, $align:center, $wrap:wrap) {
+    align-items: $align;
+    justify-content: $justify-content;
+    flex-wrap: $wrap;
+}
+
+// Variable length arguments
+@mixin positions($pos, $x...) {
+    position: $pos;
+    @for $var from 0 to length($x) {
+        left: nth($x, $var + 1);
+    }
+}
+
+@function calculate_space($base, $x) {
+    $result : 1;
+    @for $var from 1 to $x {
+        $result : $base * $x;
+    }
+    @return $result;
+}
