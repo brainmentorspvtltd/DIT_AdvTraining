@@ -1,0 +1,43 @@
+Why NoSQL ?
+- huge volume of data
+
+
+- Structured
+- Semi-Structured
+- UnStructured
+
+
+RDBMS vs NoSQL
+
+RDBMS - Structured and Organized Data
+- DDL, DML, DQL, TCL
+- Data is stored in separate tables
+
+
+NoSQL
+- No Declarative Query Language
+- No Pre-defined Schema
+- Unstructured data coule be easily stored
+- CAP Theorem	- Consistency, Availability, Partition Tolerence
+- BASE Transaction - Basically Available, Soft State, Eventually Consistent
+
+
+MongoDB Installation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
