@@ -1,0 +1,976 @@
+Evaluation Operators
+- $regex
+  Syntax : {key : {$regex : /pattern/, $options : <options>}}
+i
+m
+x
+s
+
+- $expr
+
+let expression = {
+   $cond : {
+	     if : {$gt : ["$profit", 200]},
+		then : {$subtract : ["$profit", 20]},
+		else : "$profit"
+	}
+};
+
+
+
+Array Operations
+- $ (update) and $[]
+- $addToSet
+- $push
+- $pop
+- $pull
+- $pullAll
+- $slice
+- $each
+- $position
+- $sort
+
+
+arr : ["red", "white", "silver", "gray"]
+{"arr.$" : value}
+
+{"arr.$[]" : value}
+{"arr.$[].key" : value}
+{"arr.$[].key.$[]" : value}
+
+
+
+
+
+test> show dbs;
+admin         40.00 KiB
+config        60.00 KiB
+local         72.00 KiB
+ncu_shopapp  132.00 KiB
+shopapp       72.00 KiB
+test> use shopapp;
+switched to db shopapp
+shopapp> show collections;
+products
+shopapp> db.products.find();
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    p_brand: 'Apple',
+    p_category: 'Mobile',
+    color: [ 'white', 'gray', 'silver', 'gold' ],
+    p_details: {
+      ram: [ '4 GB', '8 GB', '16 GB' ],
+      memory: [ '64 GB', '128 GB' ],
+      camera: [ '12 MP', '16 MP' ],
+      processor: 'A14 Bionic',
+      display: '6.1 inch',
+      brightness: 625
+    },
+    discount: 5,
+    price: 708.75,
+    offers: [ 'offer_1', 'offer_1' ]
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    p_brand: 'Apple',
+    p_category: 'Laptop',
+    color: [ 'gray', 'silver' ],
+    p_details: {
+      ram: [ '8 GB', '16 GB', '32 GB' ],
+      memory: [ '256 GB', '512 GB' ],
+      weight: 1.4,
+      brightness: 500
+    },
+    discount: 5,
+    price: 708.75,
+    offers: [ 'offer_1', 'offer_1' ]
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96a"),
+    p_name: 'Adidas Shoes',
+    p_brand: 'Adidas',
+    p_category: 'Shoes',
+    color: [ null, 'gray', 'black', 'red' ],
+    p_details: { size: [ 7, 8, 9, 10 ], material: 'leather', type: 'casual' },
+    discount: 5,
+    offers: [ 'offer_1', 'offer_1' ],
+    price: 4000
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96b"),
+    p_name: 'Puma Shoes',
+    p_brand: 'Puma',
+    p_category: 'Shoes',
+    color: [ null, 'gray', 'black' ],
+    p_details: {
+shopapp>
+
+shopapp> db.products.find({p_name : {$regex : /iphone/}});
+      weight: 0.5
+shopapp>
+    discount: 5,
+shopapp>
+    price: 3500
+shopapp>
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96c"),
+    p_name: 'Titan Smart Watch',
+    p_brand: 'Titan',
+    p_category: 'Watch',
+    color: [ 'white', 'gray', 'silver', 'black', 'pink' ],
+    p_details: {
+      features: [ 'heartbeat', 'steps', 'calories', 'BMI' ],
+      battery: '300 mAh',
+      display: '1.3 inch',
+      weight: 0.2
+    },
+    discount: 5,
+    price: 708.75,
+    offers: [ 'offer_1', 'offer_1' ]
+  },
+  {
+    _id: ObjectId("633b0d96ce49622a1ee95a21"),
+    p_name: 'Samsung Smart Watch',
+    p_brand: 'Samsung',
+    p_category: 'Watch',
+    color: 'gray',
+    p_details: {
+      features: [ 'heartbeat', 'steps', 'calories', 'BMI' ],
+      battery: '300 mAh',
+      display: '1.4 inch',
+      weight: 0.15
+    },
+    price: 708.75,
+    discount: 5,
+    offers: [ 'offer_1', 'offer_1' ]
+  }
+]
+shopapp>
+
+
+
+
+
+
+
+
+
+
+
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp> db.products.find({p_name : {$regex : /iphone/}});
+
+shopapp> db.products.find({p_name : {$regex : /Iphone/}});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    p_brand: 'Apple',
+    p_category: 'Mobile',
+    color: [ 'white', 'gray', 'silver', 'gold' ],
+    p_details: {
+      ram: [ '4 GB', '8 GB', '16 GB' ],
+      memory: [ '64 GB', '128 GB' ],
+      camera: [ '12 MP', '16 MP' ],
+      processor: 'A14 Bionic',
+      display: '6.1 inch',
+      brightness: 625
+    },
+    discount: 5,
+    price: 708.75,
+    offers: [ 'offer_1', 'offer_1' ]
+  }
+]
+shopapp> db.products.find({"p_details.display" : {$regex : /6/}});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    p_brand: 'Apple',
+    p_category: 'Mobile',
+    color: [ 'white', 'gray', 'silver', 'gold' ],
+    p_details: {
+      ram: [ '4 GB', '8 GB', '16 GB' ],
+      memory: [ '64 GB', '128 GB' ],
+      camera: [ '12 MP', '16 MP' ],
+      processor: 'A14 Bionic',
+      display: '6.1 inch',
+      brightness: 625
+    },
+    discount: 5,
+    price: 708.75,
+    offers: [ 'offer_1', 'offer_1' ]
+  }
+]
+shopapp> db.products.find({"p_details.display" : {$regex : /6/}}, {p_name : 1, p_price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13'
+  }
+]
+shopapp> db.products.find({"p_details.display" : {$regex : /6/}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  }
+]
+shopapp> db.products.find({"p_details.display" : {$regex : /iphone/}}, {p_name : 1, price : 1});
+
+shopapp> db.products.find({"p_details.display" : {$regex : /iphone/, $options : "$i"}}, {p_name : 1, price : 1});
+MongoServerError:  invalid flag in regex options: $
+shopapp> db.products.find({"p_details.display" : {$regex : "iphone", $options : "$i"}}, {p_name : 1, price : 1});
+MongoServerError:  invalid flag in regex options: $
+shopapp> db.products.find({"p_name" : {$regex : "iphone", $options : "$i"}}, {p_name : 1, price : 1});
+MongoServerError:  invalid flag in regex options: $
+shopapp> db.products.find({"p_name" : {$regex : "iphone", $options : "i"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  }
+]
+shopapp> db.products.find({"p_name" : {$regex : "iphone", $options : "m"}}, {p_name : 1, price : 1});
+
+shopapp> db.products.find({"p_name" : {$regex : "Iphone", $options : "m"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  }
+]
+shopapp> db.products.find({"p_name" : {$regex : "^iphone", $options : "m"}}, {p_name : 1, price : 1});
+
+shopapp> db.products.find({"p_name" : {$regex : "Apple", $options : "m"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    price: 708.75
+  }
+]
+shopapp> db.products.find({"p_name" : {$regex : "^Apple", $options : "m"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    price: 708.75
+  }
+]
+shopapp> db.products.find({"p_name" : {$regex : "^Apple$", $options : "m"}}, {p_name : 1, price : 1});
+
+shopapp> db.products.find({"p_name" : {$regex : "Pro$", $options : "m"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    price: 708.75
+  }
+]
+shopapp> db.products.find({"p_name" : {$regex : "^Pro", $options : "m"}}, {p_name : 1, price : 1});
+
+shopapp> db.products.find({"p_name" : {$regex : "^A", $options : "m"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96a"),
+    p_name: 'Adidas Shoes',
+    price: 4000
+  }
+]
+shopapp> var pattern = "abc # \n123";
+
+shopapp> db.products.find({"p_name" : {$regex : pattern, $options : "x"}}, {p_name : 1, price : 1});
+
+shopapp> var pattern = "^a";
+
+shopapp> db.products.find({"p_name" : {$regex : pattern, $options : "xi"}}, {p_name : 1, price : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96a"),
+    p_name: 'Adidas Shoes',
+    price: 4000
+  }
+]
+shopapp> db.createCollection("sales");
+{ ok: 1 }
+shopapp> db.sales.insertOne({"_id" : 1, "p_category" : "Electronics", "sales" : 300, "profit" : 250});
+{ acknowledged: true, insertedId: 1 }
+shopapp> db.sales.insertOne({"_id" : 2, "p_category" : "Shoes", "sales" : 50, "profit" : 45});
+{ acknowledged: true, insertedId: 2 }
+shopapp> db.sales.insertOne({"_id" : 3, "p_category" : "Furniture", "sales" : 150, "profit" : 205});
+{ acknowledged: true, insertedId: 3 }
+shopapp> db.sales.find();
+[
+  { _id: 1, p_category: 'Electronics', sales: 300, profit: 250 },
+  { _id: 2, p_category: 'Shoes', sales: 50, profit: 45 },
+  { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 }
+]
+shopapp> db.sales.find({$expr : {$gt : ["$sales", "$profit"]}});
+[
+  { _id: 1, p_category: 'Electronics', sales: 300, profit: 250 },
+  { _id: 2, p_category: 'Shoes', sales: 50, profit: 45 }
+]
+shopapp> db.sales.find({$expr : {$gt : ["$profit", "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gt : ["$profit", 100]}, then : {$subtract : ["$profit", 20]}, else : "$profit"}}, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gt : ["$profit", 100]}, then : {$subtract : ["$profit", 20]}, else : "$profit"}}, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gt : ["$profit", 200]}, then : {$subtract : ["$profit", 20]}, else : "$profit"}}, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$lt : ["$profit", 200]}, then : {$subtract : ["$profit", 20]}, else : "$profit"}}, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gte : ["$profit", 200]}, then : {$subtract : ["$profit", 20]}, else : "$profit"}}, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gte : ["$sales", 200]}, then : {$subtract : ["$sales", 20]}, else : "$sales"}}, "$profit"]}});
+[
+  { _id: 1, p_category: 'Electronics', sales: 300, profit: 250 },
+  { _id: 2, p_category: 'Shoes', sales: 50, profit: 45 }
+]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gte : ["$sales", 200]}, then : {$subtract : ["$sales", 20]}, else : "$sales"}}, "$profit"]}});
+[
+  { _id: 1, p_category: 'Electronics', sales: 300, profit: 250 },
+  { _id: 2, p_category: 'Shoes', sales: 50, profit: 45 }
+]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gte : ["$sales", 200]}, then : {$subtract : ["$sales", 100]}, else : "$sales"}}, "$profit"]}});
+[ { _id: 2, p_category: 'Shoes', sales: 50, profit: 45 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gt : ["$profit", 200]}, then : {$subtract : ["$profit", 20]}, else : "$profit"}}, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp> db.sales.find({$expr : {$gt : [{$cond : {if : {$gt : ["$profit", 200]}, then : {$subtract : ["$profit", 80]}, else : "$profit"}}, "$sales"]}});
+
+shopapp> let expression = {
+...    $cond : {
+.....        if : {$gt : ["$profit", 200]},
+.....           then : {$subtract : ["$profit", 20]},
+.....           else : {"$profit"}
+Uncaught:
+SyntaxError: Unexpected token (5:19)
+
+  3 |        if : {$gt : ["$profit", 200]},
+  4 |           then : {$subtract : ["$profit", 20]},
+> 5 |           else : {"$profit"}
+    |                            ^
+  6 |
+
+shopapp>        }
+Uncaught:
+SyntaxError: Unexpected token (1:1)
+
+> 1 |   }
+    |   ^
+  2 |
+
+shopapp> let expression = {
+...    $cond : {
+.....        if : {$gt : ["$profit", 200]},
+.....           then : {$subtract : ["$profit", 20]},
+.....           else : {"$profit"}
+Uncaught:
+SyntaxError: Unexpected token (5:19)
+
+  3 |        if : {$gt : ["$profit", 200]},
+  4 |           then : {$subtract : ["$profit", 20]},
+> 5 |           else : {"$profit"}
+    |                            ^
+  6 |
+
+shopapp>        }
+Uncaught:
+SyntaxError: Unexpected token (1:1)
+
+> 1 |   }
+    |   ^
+  2 |
+
+shopapp> };let expression = {
+Uncaught:
+SyntaxError: Unexpected token (1:0)
+
+> 1 | };let expression = {
+    | ^
+  2 |
+
+shopapp>    $cond : {
+...          if : {$gt : ["$profit", 200]},
+Uncaught:
+SyntaxError: Unexpected token, expected "(" (2:9)
+
+  1 |    $cond : {
+> 2 |        if : {$gt : ["$profit", 200]},
+    |           ^
+  3 |
+
+shopapp>                then : {$subtract : ["$profit", 20]},
+Uncaught:
+SyntaxError: Unexpected token (1:38)
+
+> 1 |           then : {$subtract : ["$profit", 20]},
+    |                                               ^
+  2 |
+
+shopapp>                else : "$profit"
+Uncaught:
+SyntaxError: Unexpected token (1:2)
+
+> 1 |           else : "$profit"
+    |           ^
+  2 |
+
+shopapp>        }
+Uncaught:
+SyntaxError: Unexpected token (1:1)
+
+> 1 |   }
+    |   ^
+  2 |
+
+shopapp> let expression = {
+...    $cond : {
+.....        if : {$gt : ["$profit", 200]},
+.....           then : {$subtract : ["$profit", 20]},
+.....           else : "$profit"
+.....   }
+... };
+
+shopapp> db.sales.find({$expr : {$gt : [expression, "$sales"]}});
+[ { _id: 3, p_category: 'Furniture', sales: 150, profit: 205 } ]
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp>
+
+shopapp> db.students.insertMany([{marks : [78, 80, 88]}, {marks : [55, 76, 89]}, {marks : [90,77,65]}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("633efeaeb0411355dbfa0d47"),
+    '1': ObjectId("633efeaeb0411355dbfa0d48"),
+    '2': ObjectId("633efeaeb0411355dbfa0d49")
+  }
+}
+shopapp> db.students.find();
+[
+  { _id: ObjectId("633efeaeb0411355dbfa0d47"), marks: [ 78, 80, 88 ] },
+  { _id: ObjectId("633efeaeb0411355dbfa0d48"), marks: [ 55, 76, 89 ] },
+  { _id: ObjectId("633efeaeb0411355dbfa0d49"), marks: [ 90, 77, 65 ] }
+]
+shopapp> db.students.updateOne({}, {$set : {"marks.$" : 70}});
+MongoServerError: The positional operator did not find the match needed from the query.
+shopapp> db.students.deleteMany({});
+{ acknowledged: true, deletedCount: 3 }
+shopapp> db.students.insertMany([{"_id" : 1, marks : [78, 80, 88]}, {"_id" : 2, marks : [55, 76, 89]}, {"_id" : 3, marks : [90,77,65]}]);
+{ acknowledged: true, insertedIds: { '0': 1, '1': 2, '2': 3 } }
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 78, 80, 88 ] },
+  { _id: 2, marks: [ 55, 76, 89 ] },
+  { _id: 3, marks: [ 90, 77, 65 ] }
+]
+shopapp> db.students.updateOne({_id : 1}, {$set : {"marks.$" : 70}});
+MongoServerError: The positional operator did not find the match needed from the query.
+shopapp> db.students.updateOne({_id : 1, marks : 78}, {$set : {"marks.$" : 70}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 70, 80, 88 ] },
+  { _id: 2, marks: [ 55, 76, 89 ] },
+  { _id: 3, marks: [ 90, 77, 65 ] }
+]
+shopapp> db.products.find({}, {p_name : 1, price : 1, p_details : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    p_details: {
+      ram: [ '4 GB', '8 GB', '16 GB' ],
+      memory: [ '64 GB', '128 GB' ],
+      camera: [ '12 MP', '16 MP' ],
+      processor: 'A14 Bionic',
+      display: '6.1 inch',
+      brightness: 625
+    },
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    p_details: {
+      ram: [ '8 GB', '16 GB', '32 GB' ],
+      memory: [ '256 GB', '512 GB' ],
+      weight: 1.4,
+      brightness: 500
+    },
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96a"),
+    p_name: 'Adidas Shoes',
+    p_details: { size: [ 7, 8, 9, 10 ], material: 'leather', type: 'casual' },
+    price: 4000
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96b"),
+    p_name: 'Puma Shoes',
+    p_details: {
+      size: [ 7, 8, 9, 10 ],
+      material: 'leather',
+      type: 'casual',
+      weight: 0.5
+    },
+    price: 3500
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96c"),
+    p_name: 'Titan Smart Watch',
+    p_details: {
+      features: [ 'heartbeat', 'steps', 'calories', 'BMI' ],
+      battery: '300 mAh',
+      display: '1.3 inch',
+      weight: 0.2
+    },
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633b0d96ce49622a1ee95a21"),
+    p_name: 'Samsung Smart Watch',
+    p_details: {
+      features: [ 'heartbeat', 'steps', 'calories', 'BMI' ],
+      battery: '300 mAh',
+      display: '1.4 inch',
+      weight: 0.15
+    },
+    price: 708.75
+  }
+]
+shopapp> db.products.updateOne({p_name : 'Samsung Smart Watch', "p_details.features"}, {$set : {"p_details.features.$"}});
+Uncaught:
+SyntaxError: Unexpected token (1:75)
+
+> 1 | db.products.updateOne({p_name : 'Samsung Smart Watch', "p_details.features"}, {$set : {"p_details.features.$"}});
+    |                                                                            ^
+  2 |
+
+shopapp> db.products.updateOne({p_name : 'Samsung Smart Watch', "p_details.features" : "steps"}, {"p_details.features.$" : "running and steps"});
+MongoInvalidArgumentError: Update document requires atomic operators
+shopapp> db.products.updateOne({p_name : 'Samsung Smart Watch', "p_details.features" : "steps"}, {$set : {"p_details.features.$" : "running and steps"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.products.find({}, {p_name : 1, price : 1, p_details : 1});
+[
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d968"),
+    p_name: 'Apple Iphone 13',
+    p_details: {
+      ram: [ '4 GB', '8 GB', '16 GB' ],
+      memory: [ '64 GB', '128 GB' ],
+      camera: [ '12 MP', '16 MP' ],
+      processor: 'A14 Bionic',
+      display: '6.1 inch',
+      brightness: 625
+    },
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d969"),
+    p_name: 'Apple Macbook Pro',
+    p_details: {
+      ram: [ '8 GB', '16 GB', '32 GB' ],
+      memory: [ '256 GB', '512 GB' ],
+      weight: 1.4,
+      brightness: 500
+    },
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96a"),
+    p_name: 'Adidas Shoes',
+    p_details: { size: [ 7, 8, 9, 10 ], material: 'leather', type: 'casual' },
+    price: 4000
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96b"),
+    p_name: 'Puma Shoes',
+    p_details: {
+      size: [ 7, 8, 9, 10 ],
+      material: 'leather',
+      type: 'casual',
+      weight: 0.5
+    },
+    price: 3500
+  },
+  {
+    _id: ObjectId("633afceaaf00c4dc3d99d96c"),
+    p_name: 'Titan Smart Watch',
+    p_details: {
+      features: [ 'heartbeat', 'steps', 'calories', 'BMI' ],
+      battery: '300 mAh',
+      display: '1.3 inch',
+      weight: 0.2
+    },
+    price: 708.75
+  },
+  {
+    _id: ObjectId("633b0d96ce49622a1ee95a21"),
+    p_name: 'Samsung Smart Watch',
+    p_details: {
+      features: [ 'heartbeat', 'running and steps', 'calories', 'BMI' ],
+      battery: '300 mAh',
+      display: '1.4 inch',
+      weight: 0.15
+    },
+    price: 708.75
+  }
+]
+shopapp> db.students.updateMany({}, {$inc : {"marks.$[]" : 5}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93 ] },
+  { _id: 2, marks: [ 60, 81, 94 ] },
+  { _id: 3, marks: [ 95, 82, 70 ] }
+]
+shopapp> db.students.updateOne({_id : 1}, {$addToSet : {marks : 75}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93 ] },
+  { _id: 2, marks: [ 60, 81, 94 ] },
+  { _id: 3, marks: [ 95, 82, 70 ] }
+]
+shopapp> db.students.updateOne({_id : 1}, {$addToSet : {marks : 78}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93, 78 ] },
+  { _id: 2, marks: [ 60, 81, 94 ] },
+  { _id: 3, marks: [ 95, 82, 70 ] }
+]
+shopapp> db.students.updateOne({_id : 2}, {$push : {marks : 70}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93, 78 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70 ] },
+  { _id: 3, marks: [ 95, 82, 70 ] }
+]
+shopapp> db.students.updateOne({_id : 3}, {$push : {marks : 77}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93, 78 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77 ] }
+]
+shopapp> db.students.updateMany({}, {$push : {marks : 50}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93, 78, 50 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70, 50 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 1}, {$push : {marks : {$each : [55,59]}}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  {
+    _id: 1,
+    marks: [
+      75, 85, 93, 78,
+      50, 55, 59
+    ]
+  },
+  { _id: 2, marks: [ 60, 81, 94, 70, 50 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 1},{$pop : {marks : 1}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93, 78, 50, 55 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70, 50 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 1},{$pop : {marks : 1}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 75, 85, 93, 78, 50 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70, 50 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 1},{$pop : {marks : -11}});
+MongoServerError: $pop expects 1 or -1, found: -11
+shopapp> db.students.updateOne({_id : 1},{$pop : {marks : -1}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 85, 93, 78, 50 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70, 50 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 2}, {$pull : {marks : {$lt : 60}}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 85, 93, 78, 50 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70 ] },
+  { _id: 3, marks: [ 95, 82, 70, 77, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 3}, {$pullAll : {marks :  [71, 77]}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 85, 93, 78, 50 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70 ] },
+  { _id: 3, marks: [ 95, 82, 70, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 1}, {$push : {marks : {$each : [91,94,95], $slice : -5}}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 78, 50, 91, 94, 95 ] },
+  { _id: 2, marks: [ 60, 81, 94, 70 ] },
+  { _id: 3, marks: [ 95, 82, 70, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 2}, {$push : {marks : {$each : [71,74,75], $slice : 3}}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 78, 50, 91, 94, 95 ] },
+  { _id: 2, marks: [ 60, 81, 94 ] },
+  { _id: 3, marks: [ 95, 82, 70, 50 ] }
+]
+shopapp> db.students.updateOne({_id : 2}, {$push : {marks : {$each : [71,74,75], $slice : -5}}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+shopapp> db.students.find();
+[
+  { _id: 1, marks: [ 78, 50, 91, 94, 95 ] },
+  { _id: 2, marks: [ 81, 94, 71, 74, 75 ] },
+  { _id: 3, marks: [ 95, 82, 70, 50 ] }
+]
+shopapp>
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+Cursors
+
+var cursor = db.coll_name.find();
+
+cursor.forEach(printjson)
+
+while (cursor.hasNext()) {printjson(cursor.next()); }
+
+
+Sorting Documents
+
+cursor.sort({field : order, field : order})
+order : 1 or -1
+1  : asc order
+-1 : desc order
+
+
+Limit - limit()
+
+
+skip()
+
+Pagination
+
+
+Updating Documents
+- updateOne
+- updateMany
+
+
+db.collection.updateOne(filter, update, options)
+
+{$set : {field : value...}}
+
+
+db.collection.updateMany(filter, update, options)
+
+{$set : {field : value...}}
+
+
+$inc operator
+$min operator
+$max
+$mul
+$unset : remove any field
+$rename
+
+
+{$min : {key : value}}
+{$max : {key : value}}
+
+$mul
+{$mul : {key : value}}
+
+{$mul : {price : 1.1}} : multiply price by 10%
+
+
+{$unset : {key : ""}}
+{$unset : {"emb.key" : ""}}
+{$unset : {"arr.index" : ""}}
+
+
+{$rename : {key : new_key_name}}
+
+
+
+upsert - update and insert
+
+db.collection.updateMany(query, update, {upsert : true})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
