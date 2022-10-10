@@ -42,6 +42,16 @@ arr : ["red", "white", "silver", "gray"]
 
 
 
+
+
+
+
+
+
+
+
+
+
 test> show dbs;
 admin         40.00 KiB
 config        60.00 KiB
