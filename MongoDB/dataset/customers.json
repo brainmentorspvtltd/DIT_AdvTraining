@@ -1,0 +1,38 @@
+[
+    {
+        "c_id" : "c_101",
+        "name" : "John",
+        "phone" : 8989889989,
+        "details" : {
+            "email" : "john12@gmail.com",
+            "address" : "Delhi"
+        }
+    },
+    {
+        "c_id" : "c_102",
+        "name" : "Mac",
+        "phone" : 8985589989,
+        "details" : {
+            "email" : "mac12@gmail.com",
+            "address" : "Pune"
+        }
+    },
+    {
+        "c_id" : "c_103",
+        "name" : "Nick",
+        "phone" : 8989889989,
+        "details" : {
+            "email" : "nick@gmail.com",
+            "address" : "Delhi"
+        }
+    },
+    {
+        "c_id" : "c_104",
+        "name" : "John",
+        "phone" : 8989889989,
+        "details" : {
+            "email" : "john11@gmail.com",
+            "address" : "Delhi"
+        }
+    }
+]
